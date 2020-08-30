@@ -2,6 +2,7 @@ from flask import Flask, request, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template
 from datetime import datetime
+from sqlalchemy import desc
 
 app=Flask(__name__)
 app.config[
@@ -27,7 +28,7 @@ class usermessage(db.Model):
 
 @app.route('/')
 def index():
-    data_UserData = usermessage.query.all()
+    data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
     history_dic = {}
     history_list = []
     for _data in data_UserData:
@@ -38,7 +39,7 @@ def index():
         history_list.append(history_dic)
         history_dic = {}
 
-    return history_list['user_id']
+    return history_list[0]['user_id']
 
 if __name__ =="__main__":
     app.run()
