@@ -31,10 +31,10 @@ def index():
     history_dic = {}
     history_list = []
     for _data in data_UserData:
-        history_dic['user_id'] = _data.status
-        history_dic['group_id'] = _data.type
-        history_dic['message'] = _data.user_id
-        history_dic['account'] = _data.group_id
+        history_dic['user_id'] = _data.user_id
+        history_dic['group_id'] = _data.group_id
+        history_dic['message'] = _data.message
+        history_dic['account'] = _data.account
         history_list.append(history_dic)
         history_dic = {}
 
