@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import render_template
 from datetime import datetime
 from sqlalchemy import desc
+from flask import render_template
 
 app=Flask(__name__)
 app.config[
@@ -39,7 +40,7 @@ def index():
         history_list.append(history_dic)
         history_dic = {}
 
-    return history_list[0]['user_id']
+    return render_template('index.html',history_list[0])
 
 if __name__ =="__main__":
     app.run()

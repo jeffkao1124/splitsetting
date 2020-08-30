@@ -13,9 +13,9 @@
     </tr>
     {% for usermessage in data_UserData %}
     <tr>
-    <td>{{ usermessage[0] }}</td>
-    <td>{{ usermessage[1] }}</td>
-    <td>{{ usermessage[2] }}</td>
+    <td>{{ history_list[0]['user_id']] }}</td>
+    <td>{{ history_list[0]['message'] }}</td>
+    <td>{{ history_list[0]['birth_date'] }}</td>
     </tr>
     {% endfor %}
 </table>
