@@ -28,7 +28,7 @@ class usermessage(db.Model):
 @app.route('/')
 def index():
     data_UserData = usermessage.query.all()
-    return "ok"
+    return render_template('index.html', data_UserData=data_UserData)
 
 if __name__ =="__main__":
     app.run()
