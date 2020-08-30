@@ -29,14 +29,6 @@ def index():
     usermessage = usermessage.query.all()
     return render_template('index.html', usermessage=usermessage)
 
-app.run()
-
-
-@app.route("/test")
-def test():
-    return "Hello World!"
-
-
 if __name__ =="__main__":
     app.run()
 
