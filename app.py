@@ -40,7 +40,7 @@ def index():
         history_list.append(history_dic)
         history_dic = {}
 
-    a=history_list[0]
+    a = history_list[0]['message']
 
     return render_template('index.html',**locals())
 
