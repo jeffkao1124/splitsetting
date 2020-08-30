@@ -42,7 +42,7 @@ def index():
 
     a=history_list[0]
 
-    return render_template('index.html',a)
+    return render_template('index.html',**locals())
 
 if __name__ =="__main__":
     app.run()
