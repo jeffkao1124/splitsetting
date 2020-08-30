@@ -40,7 +40,9 @@ def index():
         history_list.append(history_dic)
         history_dic = {}
 
-    return render_template('index.html',history_list[0])
+    a=history_list[0]
+
+    return render_template('index.html',a)
 
 if __name__ =="__main__":
     app.run()
