@@ -39,7 +39,7 @@ def index():
     #    history_dic['birth_date'] = _data.group_id
     #    history_list.append(history_dic)
     #    history_dic = {}
-    return data_UserData
+    return "ok"
 
 if __name__ =="__main__":
     app.run()
