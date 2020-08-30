@@ -43,6 +43,7 @@ def index():
     a = history_list[0]['user_id']
     b = history_list[0]['message']
     c = history_list[0]['account']
+    d = history_list
 
     return render_template('index.html',**locals())
 
