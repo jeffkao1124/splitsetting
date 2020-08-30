@@ -6,8 +6,8 @@ app=Flask(__name__)
 app.config[
     'SQLALCHEMY_DATABASE_URI'] ='postgres://szcllceapwexar:6de14fbb3a64a6ac2c1f81d1a6f6e528ee13cdbf7e2abf80ee0f57396180b228@ec2-54-236-146-234.compute-1.amazonaws.com:5432/deu86ol7k69o7t'
 
-#app.config[
-#    'SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config[
+    'SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
 #db.init_app(app)
@@ -27,8 +27,8 @@ class usermessage(db.Model):
 
 @app.route('/')
 def index():
-    usermessage = usermessage.query.all()
-    return render_template('index.html', usermessage=usermessage)
+    data_UserData = usermessage.query.all()
+    return "ok"
 
 if __name__ =="__main__":
     app.run()
