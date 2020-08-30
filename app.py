@@ -13,7 +13,6 @@ app.config[
     'SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
-#db.init_app(app)
 
 class usermessage(db.Model):
     __tablename__ ='usermessage'
@@ -31,16 +30,16 @@ class usermessage(db.Model):
 @app.route('/')
 def index():
     data_UserData = usermessage.query.all()
-    history_dic = {}
-    history_list = []
-    for _data in data_UserData:
-        history_dic['user_id'] = _data.status
-        history_dic['group_id'] = _data.type
-        history_dic['message'] = _data.user_id
-        history_dic['birth_date'] = _data.group_id
-        history_list.append(history_dic)
-        history_dic = {}
-    return history_list[0]
+    #history_dic = {}
+    #history_list = []
+    #for _data in data_UserData:
+    #    history_dic['user_id'] = _data.status
+    #    history_dic['group_id'] = _data.type
+    #    history_dic['message'] = _data.user_id
+    #    history_dic['birth_date'] = _data.group_id
+    #    history_list.append(history_dic)
+    #    history_dic = {}
+    return data_UserData
 
 if __name__ =="__main__":
     app.run()
