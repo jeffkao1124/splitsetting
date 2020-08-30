@@ -1,9 +1,7 @@
 from flask import Flask, request, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template
-from dbModel import *
 from datetime import datetime
-from sqlalchemy import desc
 
 app=Flask(__name__)
 app.config[
