@@ -38,7 +38,7 @@ def index():
         history_list.append(history_dic)
         history_dic = {}
 
-    return history_list[0]
+    return history_list[0]['user_id']
 
 if __name__ =="__main__":
     app.run()
