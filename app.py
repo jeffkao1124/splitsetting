@@ -28,8 +28,17 @@ class usermessage(db.Model):
 @app.route('/')
 def index():
     data_UserData = usermessage.query.all()
+    history_dic = {}
+    history_list = []
+    for _data in data_UserData:
+        history_dic['user_id'] = _data.status
+        history_dic['group_id'] = _data.type
+        history_dic['message'] = _data.user_id
+        history_dic['account'] = _data.group_id
+        history_list.append(history_dic)
+        history_dic = {}
 
-    return "ok"
+    return history_list[0]
 
 if __name__ =="__main__":
     app.run()
