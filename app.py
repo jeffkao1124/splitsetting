@@ -1,6 +1,4 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask import render_template
 
 app=Flask(__name__)
 
@@ -8,7 +6,9 @@ app=Flask(__name__)
 def home():
     return "Hello World!"
 
-app.run()
+
+if __name__ =="__main__":
+    app.run()
 
 
 
