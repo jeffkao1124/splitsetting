@@ -36,20 +36,20 @@
         var groupid = data.context.groupId; //取得ID
 
 	}
-	function pushMsg(item, cost, payer) {
+	function pushMsg(splitter1) {
 
-		if (item == '' || cost == '' || payer=='') {  //資料檢查
-            alert('每個項目都必須輸入！');
+		if (splitter1 == '') {  //資料檢查
+            alert('最少要輸入一個設定！');
             return;
         }
         for(i=1 ; i<(count+1) ; i++){
             if ($('#splitter'+i).val() =='') {
-                alert('每個項目都必須輸入！');
+                alert('不能留下空白欄位！');
                 return;
         }
         
         }
-        var msg = "分帳 ";  //回傳訊息字串
+        var msg = "分帳設定 ";  //回傳訊息字串
 		msg = msg + item + " ";
         msg = msg + cost + " ";
         msg = msg + payer+ " ";
@@ -57,13 +57,25 @@
             splitperson = $('#splitter'+i).val()
             msg = msg + splitperson +" ";
         }
-        
+        //推播訊息
+        liff.sendMessages([
+            for(i=1 ; i<(count+1) ;i++){
+                splitperson = $('#splitter'+i).val()
+                type: 'text',
+                text: msg + splitperson
+            }])
+            /*
+        {  
+            type: 'text',
+            text: "You've successfully sent a message! Hooray!"
+        }, {
+            type: 'sticker',
+            packageId: '2',
+            stickerId: '144'
+        }])*/
 
-		liff.sendMessages([  //推播訊息
-			{ type: 'text',
-			  text: msg 
-			},
-		])
+
+
 			.then(() => {
 				liff.closeWindow();  //關閉視窗
 			});
@@ -75,7 +87,7 @@
 		});
 		
 		$('#sure').click(function (e) {  //按下確定鈕
-			pushMsg($('#item').val(), $('#cost').val(), $('#payer').val()); 
+			pushMsg($('#splitter1').val()); 
 		});
 	});
 </script>
@@ -85,14 +97,13 @@
 <div align="center">
     <br><img style="float: center" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/118591971_3901929859834211_9155588508050284823_o.jpg?_nc_cat=107&_nc_sid=8024bb&_nc_ohc=ijfpRatlcXQAX-dLZNp&_nc_ht=scontent-tpe1-1.xx&oh=b3e5d8e6be58665e1930d6581bf5c96d&oe=5F6DA126" alt="logo" width="110" height="110"/></br><p></p><h3>Welcome to</h3></p><h3><span style="background-color: #914c53; color: #ffffff;">Account Mastiff</span></h3>
     <br/>
-    <p><strong>輸入分帳者姓名進行設定：</strong></p>
+    <p><strong>歡迎使用分帳！ 請輸入分帳者姓名進行設定：</strong></p>
     <form>
         <p><strong>分帳設定 1：<input id="splitter1" type="text" name="T1"></strong></p>  
         <span id="fieldSpace"></span> 
         <a href="javascript:" onclick="addField()">增加</a> 
         <a href="javascript:" onclick="delField()">刪除</a> 
-        <a>queryDatabase()</a>
-    </form>  
+    </form> 
     <br/>
 	<button id="sure">確認送出</button>
 </div>
