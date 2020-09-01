@@ -54,7 +54,31 @@
 
     var list=[];
     var obj=document.getElementsByName("T1");
-        for (var i=0; i<obj.length; i++) {
+    var msg = "分帳設定 ";
+    msg = msg + obj[0].value ;
+    liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg
+            },
+        ])
+        sleep(1000).then(() =>
+        msg = msg + obj[1].value ;
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg
+            },
+        ])
+
+})
+
+
+
+
+
+
+
+        /*for (var i=0; i<obj.length; i++) {
             var msg = "分帳設定 ";  //回傳訊息字串
             msg = msg + obj[i].value ;
             var sendMsg={
@@ -72,7 +96,7 @@
 
         }
 
-    /*liff.sendMessages([ 
+    liff.sendMessages([ 
 			{ type: 'text',
 			  text: list[0]
 			},
