@@ -37,7 +37,7 @@
         alert(groupid);
 
 	}
-	function pushMsg() {
+	function pushMsg(splitter) {
         splitter1 = document.getElementById("splitter1").value;
         alert(splitter1);
 		if (splitter1 == '') {  //資料檢查
@@ -90,7 +90,7 @@
 		});
 		
 		$('#sure').click(function (e) {  //按下確定鈕
-			pushMsg(); 
+			pushMsg($('#splitter1').val()); 
 		});
 	});
 </script>
