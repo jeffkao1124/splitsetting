@@ -67,7 +67,7 @@
 			  text: msg_1
             },
         ])
-        sleep(1000).then(() =>
+        sleep(2000).then(() =>
         {
             liff.sendMessages([ 
 			{ type: 'text',
@@ -87,7 +87,7 @@
 			  text: msg_1
             },
         ])
-        sleep(1000).then(() =>
+        sleep(2000).then(() =>
         {
             liff.sendMessages([ 
 			{ type: 'text',
@@ -95,7 +95,7 @@
             },
         ])
 })        
-sleep(1000).then(() =>
+sleep(2000).then(() =>
         {
             liff.sendMessages([ 
 			{ type: 'text',
@@ -117,7 +117,7 @@ sleep(1000).then(() =>
 			  text: msg_1
             },
         ])
-        sleep(1000).then(() =>
+        sleep(2000).then(() =>
         {
             liff.sendMessages([ 
 			{ type: 'text',
@@ -125,7 +125,7 @@ sleep(1000).then(() =>
             },
         ])
 })        
-sleep(1000).then(() =>
+sleep(2000).then(() =>
         {
             liff.sendMessages([ 
 			{ type: 'text',
@@ -133,7 +133,7 @@ sleep(1000).then(() =>
             },
         ])
 })
-sleep(1000).then(() =>
+sleep(2000).then(() =>
         {
             liff.sendMessages([ 
 			{ type: 'text',
@@ -144,7 +144,7 @@ sleep(1000).then(() =>
         .then(() => {
             liff.closeWindow();  //關閉視窗
         });
-} else {
+} else if (obj.length===5){
     var msg_1 = msg + obj[0].value ;
     var msg_2 = msg + obj[1].value ;
     var msg_3 = msg + obj[2].value ;
@@ -155,7 +155,7 @@ sleep(1000).then(() =>
 			  text: msg_1
             },
         ])
-        sleep(1000).then(() =>
+        sleep(2000).then(() =>
         {
             liff.sendMessages([ 
 			{ type: 'text',
@@ -163,7 +163,7 @@ sleep(1000).then(() =>
             },
         ])
 })        
-sleep(1000).then(() =>
+sleep(2000).then(() =>
         {
             liff.sendMessages([ 
 			{ type: 'text',
@@ -171,7 +171,7 @@ sleep(1000).then(() =>
             },
         ])
 })
-sleep(1000).then(() =>
+sleep(2000).then(() =>
         {
             liff.sendMessages([ 
 			{ type: 'text',
@@ -179,7 +179,7 @@ sleep(1000).then(() =>
             },
         ])
 })
-sleep(1000).then(() =>
+sleep(2000).then(() =>
         {
             liff.sendMessages([ 
 			{ type: 'text',
@@ -190,7 +190,9 @@ sleep(1000).then(() =>
         .then(() => {
             liff.closeWindow();  //關閉視窗
         });
-} 
+} else{
+    return
+}
 
     
     /*var msg_1 = msg + obj[0].value ;
