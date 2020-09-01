@@ -36,7 +36,8 @@
         var groupid = data.context.groupId; //取得ID
 
 	}
-	function pushMsg(splitter1) {
+	function pushMsg() {
+        splitter1 = document.getElementById("splitter1").value;
 
 		if (splitter1 == '') {  //資料檢查
             alert('最少要輸入一個設定！');
@@ -60,7 +61,7 @@
 
 
         //推播訊息
-        for(i=1 ; i<(count+1) ;i++){
+        for(i=1 ; i<(count+1) ; i++){
             liff.sendMessages({
                 splitperson = $('#splitter'+i).val();
                 type: 'text',
@@ -88,7 +89,7 @@
 		});
 		
 		$('#sure').click(function (e) {  //按下確定鈕
-			pushMsg($('#splitter1').val()); 
+			pushMsg(); 
 		});
 	});
 </script>
