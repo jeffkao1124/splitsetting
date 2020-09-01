@@ -34,7 +34,6 @@
 	function initializeApp(data) {  //初始化LIFF
         var userid = data.context.userId;
         var groupid = data.context.groupId; //取得ID
-        alert(groupid);
 
     }
     function pushMsg(splitter1) {
@@ -46,24 +45,15 @@
 
     var msg = "分帳設定 ";  //回傳訊息字串
     msg = msg + splitter1 + " ";
-    /*msg = msg + cost + " ";
-    payer = document.getElementById("number").value;
-    msg = msg + payer + " ";
-
-    var obj=document.getElementsByName("c14");
-    var selected=[];
-    for (var i=0; i<obj.length; i++) {
-        if (obj[i].checked) {
-        msg = msg +obj[i].value +" ";
-
-    }
-    }*/
 
 
     liff.sendMessages([  //推播訊息
         { type: 'text',
         text: msg 
         },
+        { type: 'text',
+        text: msg 
+        }
     ])
         .then(() => {
             liff.closeWindow();  //關閉視窗
