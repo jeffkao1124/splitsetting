@@ -34,11 +34,12 @@
 	function initializeApp(data) {  //初始化LIFF
         var userid = data.context.userId;
         var groupid = data.context.groupId; //取得ID
+        alert(groupid);
 
 	}
 	function pushMsg() {
         splitter1 = document.getElementById("splitter1").value;
-
+        alert(splitter1);
 		if (splitter1 == '') {  //資料檢查
             alert('最少要輸入一個設定！');
             return;
