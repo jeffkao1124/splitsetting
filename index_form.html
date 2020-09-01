@@ -55,18 +55,18 @@
     var list=[];
     var obj=document.getElementsByName("T1");
     var msg = "分帳設定 ";
-    msg = msg + obj[0].value ;
+    var msg_1 = msg + obj[0].value ;
+    var msg_2 = msg + obj[1].value ;
     liff.sendMessages([ 
 			{ type: 'text',
-			  text: msg
+			  text: msg_1
             },
         ])
         sleep(1000).then(() =>
-        msg = msg + obj[1].value ;
         {
             liff.sendMessages([ 
 			{ type: 'text',
-			  text: msg
+			  text: msg_2
             },
         ])
 
