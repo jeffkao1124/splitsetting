@@ -46,16 +46,143 @@
         alert('每個項目都必須輸入！');
         return;
     }
-
-    
-
-    /*var msg = "分帳設定 ";  //回傳訊息字串
-    msg = msg + splitter1 + " ";*/
-
-    var list=[];
     var obj=document.getElementsByName("T1");
     var msg = "分帳設定 ";
     var msg_1 = msg + obj[0].value ;
+    var msg_2 = msg + obj[1].value ;
+    var msg_3 = msg + obj[2].value ;
+    var msg_4 = msg + obj[3].value ;
+    var msg_5 = msg + obj[4].value ;
+
+    if (obj.length===1) {
+        liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_1
+            },
+        ])
+        .then(() => {
+            liff.closeWindow();  //關閉視窗
+        });
+} else if (obj.length===2) {
+    liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_1
+            },
+        ])
+        sleep(1000).then(() =>
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_2
+            },
+        ])
+})
+        .then(() => {
+            liff.closeWindow();  //關閉視窗
+        });
+} else if (obj.length===3) {
+    liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_1
+            },
+        ])
+        sleep(1000).then(() =>
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_2
+            },
+        ])
+})        
+sleep(1000).then(() =>
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_3
+            },
+        ])
+})
+        .then(() => {
+            liff.closeWindow();  //關閉視窗
+        });
+} else if (obj.length===4) {
+    liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_1
+            },
+        ])
+        sleep(1000).then(() =>
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_2
+            },
+        ])
+})        
+sleep(1000).then(() =>
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_3
+            },
+        ])
+})
+sleep(1000).then(() =>
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_4
+            },
+        ])
+})
+        .then(() => {
+            liff.closeWindow();  //關閉視窗
+        });
+} else {
+    liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_1
+            },
+        ])
+        sleep(1000).then(() =>
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_2
+            },
+        ])
+})        
+sleep(1000).then(() =>
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_3
+            },
+        ])
+})
+sleep(1000).then(() =>
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_4
+            },
+        ])
+})
+sleep(1000).then(() =>
+        {
+            liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg_5
+            },
+        ])
+})
+        .then(() => {
+            liff.closeWindow();  //關閉視窗
+        });
+} 
+
+    
+    /*var msg_1 = msg + obj[0].value ;
     var msg_2 = msg + obj[1].value ;
     liff.sendMessages([ 
 			{ type: 'text',
@@ -69,16 +196,9 @@
 			  text: msg_2
             },
         ])
-
 })
 
-
-
-
-
-
-
-        /*for (var i=0; i<obj.length; i++) {
+        for (var i=0; i<obj.length; i++) {
             var msg = "分帳設定 ";  //回傳訊息字串
             msg = msg + obj[i].value ;
             var sendMsg={
@@ -104,12 +224,12 @@
         sleep(500).then(() => {
             liff.sendMessages(list)
 
-})*/
+})
 
 
         .then(() => {
             liff.closeWindow();  //關閉視窗
-        });
+        });*/
     }   
 
 	$(document).ready(function () {
