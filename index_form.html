@@ -36,63 +36,52 @@
         var groupid = data.context.groupId; //取得ID
         alert(groupid);
 
-	}
-	function pushMsg(splitter) {
-        splitter1 = document.getElementById("splitter1").value;
-        alert(splitter1);
-		if (splitter1 == '') {  //資料檢查
-            alert('最少要輸入一個設定！');
-            return;
-        }
-        for(i=1 ; i<(count+1) ; i++){
-            if ($('#splitter'+i).val() =='') {
-                alert('不能留下空白欄位！');
-                return;
-        }
-        
-        }
-        var msg = "分帳設定 ";  //回傳訊息字串
-		/*msg = msg + item + " ";
-        msg = msg + cost + " ";
-        msg = msg + payer+ " ";
-        for(i=1 ; i<(count+1) ; i++){
-            splitperson = $('#splitter'+i).val()
-            msg = msg + splitperson +" ";
-        }*/
+    }
+    function pushMsg(splitter1) {
+
+    if (splitter1 == '') {  //資料檢查
+        alert('每個項目都必須輸入！');
+        return;
+    }
+
+    var msg = "分帳設定 ";  //回傳訊息字串
+    msg = msg + splitter1 + " ";
+    /*msg = msg + cost + " ";
+    payer = document.getElementById("number").value;
+    msg = msg + payer + " ";
+
+    var obj=document.getElementsByName("c14");
+    var selected=[];
+    for (var i=0; i<obj.length; i++) {
+        if (obj[i].checked) {
+        msg = msg +obj[i].value +" ";
+
+    }
+    }*/
 
 
-        //推播訊息
-        for(i=1 ; i<(count+1) ; i++){
-            liff.sendMessages({
-                splitperson = $('#splitter'+i).val();
-                type: 'text',
-                text: msg + splitperson +" "
-            })
-        }
-        /*liff.sendMessages([
-            for(i=1 ; i<(count+1) ;i++){
-                splitperson = $('#splitter'+i).val()
-                type: 'text',
-                text: msg + splitperson
-            }])*/
-
-
-
-
-			.then(() => {
-				liff.closeWindow();  //關閉視窗
-			});
-	}
+    liff.sendMessages([  //推播訊息
+        { type: 'text',
+        text: msg 
+        },
+    ])
+        .then(() => {
+            liff.closeWindow();  //關閉視窗
+        });
+    }   
 
 	$(document).ready(function () {
-		liff.init(function (data) {  //初始化LIFF
-			initializeApp(data);
-		});
-		
-		$('#sure').click(function (e) {  //按下確定鈕
-			pushMsg($('#splitter1').val()); 
-		});
-	});
+    
+    liff.init(function (data) {  //初始化LIFF
+        initializeApp(data);
+    });
+    
+    $('#sure').click(function (e) {  //按下確定鈕
+        
+        pushMsg($('#splitter1').val()); 
+    });
+});
+    
 </script>
 
 </head>
