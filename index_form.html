@@ -39,7 +39,7 @@
     function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
     }
-    
+
     function pushMsg(splitter1) {
 
     if (splitter1 == '') {  //資料檢查
@@ -60,28 +60,27 @@
             var sendMsg={
                 type: 'text',
                 text: msg 
-            }
+            };
             list.push(sendMsg);
-
-        }
-
-       /* [  //推播訊息
-        { type: 'text',
-        text: msg 
-        },
-        { type: 'text',
-        text: msg 
-        }
-    ]*/
-    liff.sendMessages([  //推播訊息
+            liff.sendMessages([ 
 			{ type: 'text',
-			  text: 'hi'
+			  text: msg
+			},
+        ])
+        sleep(1000).then(() =>
+
+
+        }
+
+    /*liff.sendMessages([ 
+			{ type: 'text',
+			  text: list[0]
 			},
         ])
         sleep(500).then(() => {
             liff.sendMessages(list)
 
-})
+})*/
 
 
         .then(() => {
