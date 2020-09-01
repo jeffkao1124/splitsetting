@@ -36,6 +36,10 @@
         var groupid = data.context.groupId; //取得ID
 
     }
+    function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+    }
+    
     function pushMsg(splitter1) {
 
     if (splitter1 == '') {  //資料檢查
@@ -57,7 +61,7 @@
                 type: 'text',
                 text: msg 
             }
-            list.push(sendMsg)
+            list.push(sendMsg);
 
         }
 
@@ -69,8 +73,17 @@
         text: msg 
         }
     ]*/
+    liff.sendMessages([  //推播訊息
+			{ type: 'text',
+			  text: 'hi'
+			},
+        ])
+        sleep(500).then(() => {
+            liff.sendMessages(list)
 
-    liff.sendMessages(list)
+})
+
+
         .then(() => {
             liff.closeWindow();  //關閉視窗
         });
