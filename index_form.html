@@ -57,22 +57,23 @@
             splitperson = $('#splitter'+i).val()
             msg = msg + splitperson +" ";
         }*/
+
+
         //推播訊息
-        liff.sendMessages([
+        for(i=1 ; i<(count+1) ;i++){
+            liff.sendMessages({
+                splitperson = $('#splitter'+i).val();
+                type: 'text',
+                text: msg + splitperson +" "
+            })
+        }
+        /*liff.sendMessages([
             for(i=1 ; i<(count+1) ;i++){
                 splitperson = $('#splitter'+i).val()
                 type: 'text',
                 text: msg + splitperson
-            }])
-            /*
-        {  
-            type: 'text',
-            text: "You've successfully sent a message! Hooray!"
-        }, {
-            type: 'sticker',
-            packageId: '2',
-            stickerId: '144'
-        }])*/
+            }])*/
+
 
 
 
