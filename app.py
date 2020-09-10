@@ -71,8 +71,6 @@ def submit():
         history_list.append(history_dic)
         history_dic = {}
 
-    a = history_list[0]['message']
-
     return groupId
 
 if __name__ =="__main__":
