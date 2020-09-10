@@ -56,7 +56,7 @@ def index():
 
     return render_template('home.html',**locals())
 
-@app.route('/submit',methods={'Post','Get'})
+@app.route('/submit',methods=['POST','GET'])
 def submit():
     groupId = 0
     groupId = request.values['groupid']
