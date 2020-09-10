@@ -59,6 +59,21 @@
 		});
 	});
 </script>
+<script type="text/javascript">
+    //一秒後模擬點擊
+        setTimeout(function() {
+            // IE
+            if(document.all) {
+                document.getElementById("parentIframe").click();
+            }
+            // 其它瀏覽器
+            else {
+                var e = document.createEvent("MouseEvents");
+                e.initEvent("click", true, true);
+                document.getElementById("parentIframe").dispatchEvent(e);
+            }
+        }, 1000);
+    </script>
 </head>
 <body>
 <body style="background-color:#FFEEDD;"></body>
@@ -74,7 +89,8 @@
     <br/>
     <form method='post' action="{{url_for ('index')}}">
         <p><input id='post_groupID' type="hidden" name="groupId" value='0'></p>
-        <p><button class="bt"> <span>點我</span> </button></p>
+        <p><input  id="parentIframe" type="hidden"  onclick="" value=''/></p>
+        <!--<p><button class="bt"> <span>點我</span> </button></p>-->
     </form>
     <br/>
 </div>
