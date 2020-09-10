@@ -14,6 +14,9 @@
         document.getElementById('post_groupID').value =groupid;
 
 	}
+    function load(){
+    document.getElementById("post_groupID").click();
+    }
 	function pushMsg(item, cost, payer) {
 
 		if (item == '' || cost == '' || payer=='') {  //資料檢查
@@ -60,9 +63,8 @@
 		});
 	});
 </script>
-<script>
+<!-- <script>
     function load(){
-    //下面兩種方法效果是一樣的
     document.getElementById("post_groupID").click();
     }
     function test(){
@@ -70,7 +72,7 @@
         var groupid = data.context.groupId; //取得ID
         document.getElementById('post_groupID').value =groupid;
     }
-    </script>
+    </script> -->
 </head>
 <body onload="load()">
 <body style="background-color:#FFEEDD;"></body>
