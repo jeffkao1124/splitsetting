@@ -59,11 +59,17 @@
 		});
 	});
 </script>
-<script type="text/javascript">
-    document.getElementById("clickevent").click();
-</script>
+<script>
+    function load(){
+    //下面兩種方法效果是一樣的
+    document.getElementById("target").onclick();
+    }
+    function test(){
+    alert("test");
+    }
+    </script>
 </head>
-<body>
+<body onload="load()">
 <body style="background-color:#FFEEDD;"></body>
 <style> 
 .bt{background:#F0F0F0; width: 80px; height:30px; border-radius: 10px;} 
@@ -77,8 +83,7 @@
     <br/>
     <form method='post' action="{{url_for ('index')}}">
         <p><input id='post_groupID' type="hidden" name="groupId" value='0'></p>
-        <p><input  id="parentIframe" type="hidden"  onclick="" value=''/></p>
-        <p><button id='clickevent' class="bt"> <span>點我</span> </button></p>
+        <p><button id="target" onclick="test()" class="bt"> <span>點我</span> </button></p>
     </form>
     <br/>
 </div>
