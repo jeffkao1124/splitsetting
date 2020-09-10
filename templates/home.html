@@ -51,10 +51,10 @@
 }
 
 	$(document).ready(function () {
+        $('#autoclickme a').get(0).click();
     
 		liff.init(function (data) {  //初始化LIFF
             initializeApp(data);
-            $('#autoclickme a').get(0).click();
 		});
 		
 		$('#sure').click(function (e) {  //按下確定鈕
