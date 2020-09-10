@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <title>歡迎進入分帳表單</title>
+    <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+	function initializeApp(data) {  //初始化LIFF
+        var userid = data.context.userId;
+        var groupid = data.context.groupId; //取得ID
+        document.getElementById('post_groupID').value =groupid;
+
+	}
+	function pushMsg(item, cost, payer) {
+
+		if (item == '' || cost == '' || payer=='') {  //資料檢查
+            alert('每個項目都必須輸入！');
+            return;
+        }
+        for(i=1 ; i<(count+1) ; i++){
+            if ($('#splitter'+i).val() =='') {
+                alert('每個項目都必須輸入！');
+                return;
+        }
+        
+        }
+        var msg = "分帳 ";  //回傳訊息字串
+		msg = msg + item + " ";
+        msg = msg + cost + " ";
+        msg = msg + payer+ " ";
+        for(i=1 ; i<(count+1) ; i++){
+            splitperson = $('#splitter'+i).val()
+            msg = msg + splitperson +" ";
+        }
+        
+
+		liff.sendMessages([  //推播訊息
+			{ type: 'text',
+			  text: msg 
+			},
+		])
+			.then(() => {
+				liff.closeWindow();  //關閉視窗
+			});
+	}
+
+	$(document).ready(function () {
+    
+		liff.init(function (data) {  //初始化LIFF
+            initializeApp(data);
+		});
+		
+		$('#sure').click(function (e) {  //按下確定鈕
+			pushMsg($('#item').val(), $('#cost').val(), $('#payer').val()); 
+		});
+	});
+</script>
+</head>
+<body>
+<body style="background-color:#FFEEDD;"></body>
+<style> 
+.bt{background:#F0F0F0; width: 80px; height:30px; border-radius: 10px;} 
+.bt span{ transition: 0.5s;}  /* 過渡0.5秒 */ 
+.bt:hover span{ padding-right: 15px;}  /* 當滑鼠在按鈕上時span內邊右距離25px */ 
+.bt span:after{ content: "»"; opacity: 0; /* 透明度為0 */ transition: 0.5s; /* 加個0.5秒的過渡 */ } 
+.bt:hover span:after{ opacity: 1; /* 透明度為1，就是顯示 */ } 
+</style>
+<div align="center">
+    <br><img style="float: center" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/118564250_3916210075072856_4538250581291362262_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=pVO1LBE3Ud4AX_-Wo67&_nc_ht=scontent-tpe1-1.xx&oh=e5e38d055d796ff155cec63810e9dec8&oe=5F74AE54" alt="logo" width="110" height="110"/></br><p></p><h3>Welcome to</h3></p><h3><span style="background-color: #914c53; color: #ffffff;">&nbsp Account Mastiff &nbsp</span></h3>
+    <br/>
+    <form method='post' action="{{url_for ('index')}}">
+        <p><input id='post_groupID' type="hidden" name="groupId" value='0'></p>
+        <p><button class="bt"> <span>點我</span> </button></p>
+    </form>
+    <br/>
+</div>
+</body>
+</html>

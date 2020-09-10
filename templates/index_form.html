@@ -265,6 +265,10 @@ sleep(2000).then(() =>
     <br><img style="float: center" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/118564250_3916210075072856_4538250581291362262_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=pVO1LBE3Ud4AX_-Wo67&_nc_ht=scontent-tpe1-1.xx&oh=e5e38d055d796ff155cec63810e9dec8&oe=5F74AE54" alt="logo" width="110" height="110"/></br><p></p><h3>Welcome to</h3></p><h3><span style="background-color: #914c53; color: #ffffff;">&nbsp Account Mastiff &nbsp</span></h3>
     <br/>
     <p><strong>歡迎使用分帳！</strong></p>
+    <p><strong>目前已設定分帳者：</strong></p>
+    {% for list in new_list %}
+    <p id="{{ list }}" value="{{ list }}">{{ list }}</p>
+    {% endfor %}
     <p><strong>請輸入分帳者姓名：</strong></p>
     <form>
         <p><strong>分帳者 1：<input id="splitter1" type="text" name="T1"></strong></p> 
