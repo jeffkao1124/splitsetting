@@ -54,11 +54,8 @@
     
 		liff.init(function (data) {  //初始化LIFF
             initializeApp(data);
-
+            $('#autoclickme a').get(0).click();
 		});
-        $(document).ready(function (e) {
-    $('#autoclickme a').get(0).click();
-});
 		
 		$('#sure').click(function (e) {  //按下確定鈕
 			pushMsg($('#item').val(), $('#cost').val(), $('#payer').val()); 
