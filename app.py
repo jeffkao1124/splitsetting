@@ -31,25 +31,13 @@ class usermessage(db.Model):
 def index():
     if request.method == 'POST':
         groupId = request.values['groupId']
-        SetMsgNumber = usermessage.query.filter(usermessage.group_id==groupId).filter(usermessage.status=='set').count()
-        data_UserData = usermessage.query.filter(usermessage.group_id==groupId).filter(usermessage.status=='set')
-        history_dic = {}
-        history_list = []
+        # SetMsgNumber = usermessage.query.order_by(usermessage.birth_date).filter(usermessage.group_id==groupId).filter(usermessage.status=='set').count()
+        data_UserData = usermessage.query.order_by(usermessage.birth_date).filter(usermessage.group_id==groupId).filter(usermessage.status=='set')
+        GroupPeopleString=''
         for _data in data_UserData:
-            history_dic['nickname'] = _data.nickname
-            history_list.append(history_dic)
-            history_dic = {}
-        final_list=[]
-        for i in range(SetMsgNumber):
-            final_list.append(str(history_list[i]['nickname']))
-        new_list=[]
-        for i in final_list:
-            if not i in new_list:
-                new_list.append(i)
-
-        output_text=""
-        for i in range(SetMsgNumber):
-            output_text=output_text + final_list[i]+' '
+            GroupPeopleString += _data.nickname +' '
+        new_list = GroupPeopleString.strip('  ').split(' ')
+        new_list=list(set(new_list)) #刪除重複
 
 
         return render_template('index_form.html',**locals())
