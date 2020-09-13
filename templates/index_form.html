@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
  <script>  
         var countMin = 1;  
-        var countMax = 3; 
+        var countMax = 10; 
         var commonName = "T";
         var commonsplit = "splitter";
         var count = countMin;  
@@ -36,9 +36,9 @@
         var groupid = data.context.groupId; //取得ID
 
     }
-    function sleep (time) {
-    return new Promise((resolve) => setTimeout(resolve, time));
-    }
+    // function sleep (time) {
+    // return new Promise((resolve) => setTimeout(resolve, time));
+    // }
 
     function pushMsg(splitter1) {
 
@@ -48,201 +48,21 @@
     }
     var obj=document.getElementsByName("T1");
     var msg = "分帳設定 ";
+    for(i=0;i<obj.length;i++){
+        msg = msg+ obj[i].value+' ';
+}
 
-    if (obj.length===1) {
-        var msg_1 = msg + obj[0].value ;
         liff.sendMessages([ 
 			{ type: 'text',
-			  text: msg_1
+			  text: msg
             },
         ])
         .then(() => {
             liff.closeWindow();  //關閉視窗
         });
-} else if (obj.length===2) {
-    var msg_1 = msg + obj[0].value ;
-    var msg_2 = msg + obj[1].value ;
-    liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_1
-            },
-        ])
-        sleep(2000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_2
-            },
-        ])
-})
-        .then(() => {
-            liff.closeWindow();  //關閉視窗
-        });
-} else if (obj.length===3) {
-    var msg_1 = msg + obj[0].value ;
-    var msg_2 = msg + obj[1].value ;
-    var msg_3 = msg + obj[2].value ;
-    liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_1
-            },
-        ])
-        sleep(2000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_2
-            },
-        ])
-})        
-sleep(2000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_3
-            },
-        ])
-})
-        .then(() => {
-            liff.closeWindow();  //關閉視窗
-        });
-} else if (obj.length===4) {
-    var msg_1 = msg + obj[0].value ;
-    var msg_2 = msg + obj[1].value ;
-    var msg_3 = msg + obj[2].value ;
-    var msg_4 = msg + obj[3].value ;
 
-    liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_1
-            },
-        ])
-        sleep(2000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_2
-            },
-        ])
-})        
-sleep(2000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_3
-            },
-        ])
-})
-sleep(2000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_4
-            },
-        ])
-})
-        .then(() => {
-            liff.closeWindow();  //關閉視窗
-        });
-} else if (obj.length===5){
-    var msg_1 = msg + obj[0].value ;
-    var msg_2 = msg + obj[1].value ;
-    var msg_3 = msg + obj[2].value ;
-    var msg_4 = msg + obj[3].value ;
-    var msg_5 = msg + obj[4].value ;
-    liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_1
-            },
-        ])
-        sleep(2000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_2
-            },
-        ])
-})        
-sleep(2000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_3
-            },
-        ])
-})
-sleep(2000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_4
-            },
-        ])
-})
-sleep(2000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_5
-            },
-        ])
-})
-        .then(() => {
-            liff.closeWindow();  //關閉視窗
-        });
-} else{
-    return
-}
     }
     
-    /*var msg_1 = msg + obj[0].value ;
-    var msg_2 = msg + obj[1].value ;
-    liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_1
-            },
-        ])
-        sleep(1000).then(() =>
-        {
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg_2
-            },
-        ])
-})
-
-        for (var i=0; i<obj.length; i++) {
-            var msg = "分帳設定 ";  //回傳訊息字串
-            msg = msg + obj[i].value ;
-            var sendMsg={
-                type: 'text',
-                text: msg 
-            };
-            list.push(sendMsg);
-            liff.sendMessages([ 
-			{ type: 'text',
-			  text: msg
-			},
-        ])
-        sleep(1000).then(() =>
-
-
-        }
-
-    liff.sendMessages([ 
-			{ type: 'text',
-			  text: list[0]
-			},
-        ])
-        sleep(500).then(() => {
-            liff.sendMessages(list)
-
-})
-
-
-        .then(() => {
-            liff.closeWindow();  //關閉視窗
-        });*/
        
 
 	$(document).ready(function () {
