@@ -72,9 +72,10 @@
 			  text: msg
             },
         ])
-        .then(() => {
-            liff.closeWindow();  //關閉視窗
-        });
+			.then(() => {
+			alert('已清空分帳者設定');
+            window.location.reload();
+			});
 
     }
 
@@ -136,7 +137,7 @@
     <button id="sure" class="bt">確認送出</button><br/>
     <br/>
     <br/>
-    <input type="button" name="ok" id="delete" value="重設分帳者設定"><br>
+    <input type="button" name="ok" id="delete" class="bt" value="重設分帳者設定"><br>
     <br/>
 </div>
 </body>
