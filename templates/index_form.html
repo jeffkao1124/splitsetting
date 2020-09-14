@@ -62,8 +62,21 @@
         });
 
     }
-    
-       
+
+        function deleteMsg() {
+
+    var msg = "刪除 ";
+
+        liff.sendMessages([ 
+			{ type: 'text',
+			  text: msg
+            },
+        ])
+        .then(() => {
+            liff.closeWindow();  //關閉視窗
+        });
+
+    }
 
 	$(document).ready(function () {
     
@@ -74,6 +87,11 @@
     $('#sure').click(function (e) {  //按下確定鈕
         
         pushMsg($('#splitter1').val()); 
+    });
+
+        $('#delete').click(function (e) {  //按下確定鈕
+        
+        deleteMsg(); 
     });
 });
     
@@ -116,6 +134,9 @@
         .bt:hover span:after{ opacity: 1; /* 透明度為1，就是顯示 */ } 
     </style> 
     <button id="sure" class="bt">確認送出</button><br/>
+    <br/>
+    <br/>
+    <input type="button" name="ok" id="delete" value="刪除所有資料"><br>
     <br/>
 </div>
 </body>
