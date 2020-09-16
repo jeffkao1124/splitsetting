@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
-    <title>分帳者設定</title>
+    <title>分帳設定表單</title>
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -98,28 +97,12 @@
 });
     
 </script>
-<style> 
-        .bt{background:#F0F0F0; width: 100px; height:30px; border-radius: 10px;} 
-        .bt span{ transition: 0.5s; /* 過渡0.5秒 */ } 
-        .bt:hover span{ padding-right: 15px; /* 當滑鼠在按鈕上時span內邊右距離15px */ } 
-        .bt span:after{ content: "»"; /* span後面追加內容為»*/ opacity: 0; /* 透明度為0 */ transition: 0.5s; /* 加個0.5秒的過渡 */ } 
-        .bt:hover span:after{ opacity: 1; /* 透明度為1，就是顯示 */ } 
-        .button-style {
-            font-size:15px;
-            color:black;
-            width:100px;
-            height:30px;
-            border:1.5px black double;
-            background-color:#F0F0F0;
-            border-radius:5px;
-            padding:6px;
-            margin-right:0px;
-          }
-</style> 
+
 </head>
 <body style="background-color:#FFEEDD;">
-
 <div align="center">
+    <br><img style="float: center" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/118564250_3916210075072856_4538250581291362262_o.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=pVO1LBE3Ud4AX_-Wo67&_nc_ht=scontent-tpe1-1.xx&oh=e5e38d055d796ff155cec63810e9dec8&oe=5F74AE54" alt="logo" width="110" height="110"/></br><p></p><h3>Welcome to</h3></p><h3><span style="background-color: #914c53; color: #ffffff;">&nbsp Account Mastiff &nbsp</span></h3>
+    <br/>
     <p><strong>歡迎使用分帳！</strong></p>
     <p><strong>目前已設定分帳者：</strong></p>
     {% for list in new_list %}
@@ -129,12 +112,28 @@
     <p><strong>請輸入分帳者姓名：</strong></p>
     <form>
         <p><strong>分帳者 1：<input id="splitter1" type="text" name="T1"></strong></p> 
+        <style>.button-style {
+            font-size:15px;
+            color:black;
+            width:100px;
+            height:30px;
+            border:1.5px black double;
+            background-color:#F0F0F0;
+            border-radius:5px;
+            padding:6px;
+            margin-right:0px;
+          }</style>
         <span id="fieldSpace"></span>
         <a class="button-style" href="javascript:" onclick="addField()"><img url=https://imgur.com/VrpIx8D></img></a> 
         <a class="button-style" href="javascript:" onclick="delField()">刪除</a> 
     </form> 
     <br/>
-    
+    <style> .bt{background:#F0F0F0; width: 100px; height:30px; border-radius: 10px;} 
+        .bt span{ transition: 0.5s; /* 過渡0.5秒 */ } 
+        .bt:hover span{ padding-right: 15px; /* 當滑鼠在按鈕上時span內邊右距離15px */ } 
+        .bt span:after{ content: "»"; /* span後面追加內容為»*/ opacity: 0; /* 透明度為0 */ transition: 0.5s; /* 加個0.5秒的過渡 */ } 
+        .bt:hover span:after{ opacity: 1; /* 透明度為1，就是顯示 */ } 
+    </style> 
     <button id="sure" class="bt">確認送出</button><br/>
     <br/>
     <br/>
