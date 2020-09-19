@@ -99,7 +99,7 @@
 </script>
 <style>
 body{
-  background-color: #eebd7c;
+  background-color: #f3e4c2;
 }
 ul {
   list-style-type: none;
@@ -115,8 +115,14 @@ li {
 }
 
 div {
-    background-color:#eebd7c;
+    background-color:#f3e4c2;
     text-align:center;
+}
+
+input{
+    background-color: #fff4f4;
+    border-color:#FFFFFF;
+    border-radius: 12px;
 }
 .button1 {
     display: inline-block;
@@ -326,7 +332,7 @@ div {
 </ul>
 
 <div>
-    <p style="background-color:#FFF4C1;font-size:20px;"><strong>已設定分帳者</strong></p>
+    <p style="background-color:#fff8d9;font-size:20px;text-align: left;"><strong style="margin: 20px;">已設定分帳者</strong></p>
     {% for list in new_list %}
     <p>{{ list }}</p>
     {% endfor %}
@@ -334,7 +340,7 @@ div {
     <br/>
     <input type="button" name="ok" id="delete" class="button4" value="重設分帳者"><br>
     <br/>
-    <p style="background-color:#FFF4C1;font-size:20px;"><strong>輸入分帳者</strong></p>
+    <p style="background-color:#fff8d9;font-size:20px;text-align: left;"><strong style="margin: 20px;">輸入分帳者</strong></p>
     <form>
         <p><strong>分帳者 1：<input id="splitter1" type="text" name="T1"></strong></p> 
         <span id="fieldSpace"></span>
