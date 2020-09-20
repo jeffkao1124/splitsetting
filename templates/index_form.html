@@ -343,8 +343,9 @@ input{
     <script>
     function deleteOption(list){
         var index=list.selectedIndex;
+        var selOption = list.options[index];
         var msg = 'clear';
-        msg=msg+index;
+        msg=msg+selOption;
     if(index>0 && confirm("確認要刪除？")){        
         liff.sendMessages([  
         { type: 'text',
