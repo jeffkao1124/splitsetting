@@ -339,6 +339,47 @@ input{
     <p>{{ list }}</p>
     {% endfor %}
     <br/>
+
+    <script>
+    function deleteOption(list){
+        var index=list.selectedIndex;
+        var msg = 'clear';
+        msg=msg+index;
+    if(index>0 && confirm("確認要刪除？")){        
+        liff.sendMessages([  
+        { type: 'text',
+            text: msg
+        },
+    ])
+    .then(() => {
+        alert('已刪除該分帳者');
+        window.location.reload();
+        });
+    }else{window.event.returnValue = false;
+    }
+
+        if (index>0)
+            list.options[index]=null;
+
+        else
+            alert("未選擇欲刪除的分帳者！");
+    }
+    
+    </script>
+    
+    <form>
+    <select id=theList size=5>
+        <option value='請選擇'>請選擇</option>
+        {% for _data in new_list %}
+        <option id="{{ _data }}" value="{{ _data }}">{{ _data }} </option>
+        {% endfor %}
+
+    </select>
+    <br/><br/>
+    <input type="button" value="刪除此筆資料" onclick="deleteOption(theList)" class="button2"><br>
+    </form>
+
+
     <br/>
     <input type="button" name="ok" id="delete" class="button4" value="重設分帳者"><br>
     <br/>
