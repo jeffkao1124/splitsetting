@@ -345,7 +345,7 @@ input{
         var index=list.selectedIndex;
         var selOption = list.options[index];
         var msg = 'clear';
-        msg=msg+selOption;
+        msg=msg+selOption.text;
     if(index>0 && confirm("確認要刪除？")){        
         liff.sendMessages([  
         { type: 'text',
