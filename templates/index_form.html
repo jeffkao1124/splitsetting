@@ -324,9 +324,20 @@ input{
 </head>
 <body>
 
-<img src="https://imgur.com/sJdytK8.png" width="200px" align="center">
+
 
 <div>
+    <img src="https://imgur.com/sJdytK8.png" width="200px" align="center">
+    <p style="background-color: #fff9c4;font-size:20px;text-align: left;"><strong style="margin: 20px;">輸入分帳者</strong></p>
+    <form>
+        <p><strong>分帳者 1：<input id="splitter1" type="text" name="T1"></strong></p>
+        <span id="fieldSpace"></span>
+        <a class="button1" href="javascript:" onclick="addField()">增加</a> 
+        <a class="button2" href="javascript:" onclick="delField()">減少</a> 
+    </form> 
+    <br/>
+    <a id="sure" class="button3">確認</a><br/>
+    <br/>
     <p style="background-color: #fff9c4;font-size:20px;text-align: left;"><strong style="margin: 20px;">已設定分帳者</strong></p>
     {% for list in new_list %}
     <p>{{ list }}</p>
@@ -377,16 +388,7 @@ input{
     <br/>
     <input type="button" name="ok" id="delete" class="button4" value="重設分帳者"><br>
     <br/>
-    <p style="background-color: #fff9c4;font-size:20px;text-align: left;"><strong style="margin: 20px;">輸入分帳者</strong></p>
-    <form>
-        <p><strong>分帳者 1：<input id="splitter1" type="text" name="T1"></strong></p>
-        <span id="fieldSpace"></span>
-        <a class="button1" href="javascript:" onclick="addField()">增加</a> 
-        <a class="button2" href="javascript:" onclick="delField()">減少</a> 
-    </form> 
-    <br/>
-    <a id="sure" class="button3">確認</a><br/>
-    <br/>
+    
 
 </div>
 </body>
