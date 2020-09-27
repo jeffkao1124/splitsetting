@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
-    <title>歡迎進入分帳表單</title>
+    <title>歡迎進入設定分帳者表單</title>
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -52,7 +52,7 @@ li {
 .bt:hover span:after{ opacity: 1; /* 透明度為1，就是顯示 */ } 
 </style>
 <div align="center">
-    <div><img src="https://imgur.com/sJdytK8.png" width="100px" align="center"><strong>設定分帳者</strong></div>
+    <img src="https://imgur.com/sJdytK8.png" width="200px" align="center">
     <form method='post' action="{{url_for ('index')}}">
         <p><button id='post_groupID' type="hidden" name="groupId" value='0' onclick="test()" class="bt" style="background-color: #fff9c4;"> <span>正在載入頁面資料...</span> </button></p>
     </form>
