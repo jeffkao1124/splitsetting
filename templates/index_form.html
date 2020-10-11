@@ -49,6 +49,10 @@
     var obj=document.getElementsByName("T1");
     var msg = "@分帳設定 ";
     for(i=0;i<obj.length;i++){
+        if(RegExp(/ /).exec(obj[i].value)){
+            alert("項目裡不能有空格！");
+            return;
+        }
         msg = msg+ obj[i].value+' ';
 }
 
