@@ -18,8 +18,13 @@
                 alert("最多"+countMax+"個欄位");  
             else      
                 document.getElementById("fieldSpace").innerHTML +=
-                 "<p><strong>分帳者 " + (++count) + '：<input id="' + commonsplit + (count)+'" type="text" name="T" + commonName + 1 + '"></strong></p>';
-              
+                "<p><strong>分帳者"
+                +(++count)
+                +" : <input id="" "
+                +commonsplit+(count)
+                +" type="text" name="" "
+                +commonName+1
+                +"></strong></p>"
         } 
         function delField() { 
             if (count > countMin) { 
