@@ -7,8 +7,7 @@ from flask import render_template
 
 app=Flask(__name__)
 app.config[
-    'SQLALCHEMY_DATABASE_URI'] ='postgres://brjgqjmnamwnxc:2038ec5ace178f7e6f34d1015384a39e7274126f60488b14a5403582ae5a8966@ec2-3-95-87-221.compute-1.amazonaws.com:5432/d3s7d1dsfli0sd'
-
+    'SQLALCHEMY_DATABASE_URI'] ='postgres://ytsmrtokninjov:89c13e13487574dda3662471efc02c4c8f484c4f0e063f7f6620358278174ea1@ec2-23-21-25-48.compute-1.amazonaws.com:5432/dcstg0du4mhp9j'
 app.config[
     'SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
